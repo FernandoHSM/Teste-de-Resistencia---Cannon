@@ -1,0 +1,14 @@
+npm init -y
+npm i express
+npm i nodemon
+npm install -g autocannon
+
+
+
+autocannon -c 100 -d 20 http://localhost:3000/produtos
+
+
+autocannon -c 500 -d 30 http://localhost:3000/produtos
+
+
+autocannon -c 20 -d 10 -m POST -b '{"nome":"Teclado","preco":150}' http://localhost:3000/produtos
